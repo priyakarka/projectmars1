@@ -15,14 +15,15 @@ namespace projectmars1.Pages1
         public void CreateProfile(IWebDriver driver)
         {
             Thread.Sleep(6000);
-           // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[1]/div/a[2]", 40);
+            // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[1]/div/a[2]", 40);
+           
             // adding  new language
             
             // go to profile page 
             IWebElement Profile = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[2]"));  
             Profile.Click();
            // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]", 40);
-            Thread.Sleep(6000);
+            Thread.Sleep(2000);
             // click on  Languages to add new language on profile page  
             IWebElement selectLanguages = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]"));
             selectLanguages.Click();
@@ -84,8 +85,10 @@ namespace projectmars1.Pages1
 
             // click on add langagaue to update to new laguage
             IWebElement addLangagueUpdate = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/div[1]/input"));
+            addLangagueUpdate.Click();
             addLangagueUpdate.Clear();
             addLangagueUpdate.SendKeys("Telugu");
+            addLangagueUpdate.Click();
 
             // click on choose language levels as fluent
             IWebElement chooseLanguageLevelUpdate = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/tbody/tr/td/div/div[2]/select/option[4]"));
