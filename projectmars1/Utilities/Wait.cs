@@ -14,27 +14,32 @@ namespace projectmars1.Utilities
         public static void WaitToBeClickable(IWebDriver driver, string locator, string locaterValue, int seconds)
         {
             var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-
             if (locator == "Xpath")
             {
                 wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(locaterValue)));
             }
+            if (locator == "CssSelector")
+            {
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(locaterValue)));
+            }
 
-           
-           
-        }
-        
+
+
+        }         
 
         public static void WaitToBeVisible(IWebDriver driver, string locator, string locaterValue, int seconds)
         {
             var wait = new WebDriverWait(driver, new TimeSpan(0, 0, seconds));
-
             if (locator == "Xpath")
             {
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(locaterValue)));
             }
+            if (locator == "CssSelector")
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(locaterValue)));
+            }
 
-            
+
 
 
         }

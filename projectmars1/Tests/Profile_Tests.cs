@@ -11,12 +11,8 @@ namespace projectmars1.Pages1
     [TestFixture]
     public class Profile_Tests: CommonDriver
     {        
-               
-            // open chrome browser
-            //driver = new ChromeDriver();
-            //driver.Manage().Window.Maximize();
-
-            
+        
+                    
         
 
         [Test, Order (1), Description("check if language is created")]
@@ -30,7 +26,7 @@ namespace projectmars1.Pages1
         [Test, Order (2), Description("check if language is edited")]
         public void EditProfile_Test()
         {
-            // Edit already addedProfile
+            // Edit 
             ProfilePage profilePageObj = new ProfilePage();
             profilePageObj.EditProfile(driver);
         }
@@ -38,14 +34,14 @@ namespace projectmars1.Pages1
         [Test, Order (3), Description("check if  existing language is deleted")]
         public void DeleteProfile_Test()
         {
-            // Delete created Profile
+            // Delete 
             ProfilePage profilePageObj = new ProfilePage();
             profilePageObj.DeleteProfile(driver);
 
         }
 
         [OneTimeTearDown]
-        public void CloseTestRun()
+        public void CloseTest_Run()
         {
             // SignOut from Profile page
             ProfilePage profilePageObj = new ProfilePage();

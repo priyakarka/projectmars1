@@ -46,13 +46,7 @@ namespace projectmars1.Pages1
                Assert.Fail("profile login page did not launch");
                throw;
             }
-
-
-            // check if user is logged in successfully
-            
-           //IWebElement HiPriyanka = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/div[1]/div[2]/div/span"));
-           //Wait.WaitToBeClickable(driver, "XPath", "//*[@id='account-profile-section']/div/section[1]/div/a[2]", 2000);
-            
+                      
 
         }
     }

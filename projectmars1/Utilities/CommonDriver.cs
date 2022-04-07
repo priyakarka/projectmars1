@@ -14,13 +14,15 @@ namespace projectmars1.Utilities
 {
     public class CommonDriver
     {
-        public static IWebDriver driver;
+        public IWebDriver driver;
 
         [OneTimeSetUp]
         public void LoginFunction()
         {
-            driver = new ChromeDriver();
-
+            // open chrome browser
+             driver = new ChromeDriver();
+             driver.Manage().Window.Maximize();
+            
             // Login page object initialization and definition
             LoginPage loginPageObj = new LoginPage();
             loginPageObj.LoginSteps(driver);
