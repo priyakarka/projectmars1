@@ -15,9 +15,11 @@ namespace projectmars1.Pages1
     {
         public void LoginSteps(IWebDriver driver)
         {
-           
+
             //lauch turnup portal
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("http://localhost:5000/Home");
+
 
             // click on signInbutton
             IWebElement signInButton = driver.FindElement(By.XPath("//*[@id='home']/div/div/div[1]/div/a"));
@@ -39,9 +41,9 @@ namespace projectmars1.Pages1
                 loginButton.Click();
                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-               Assert.Fail("profile login page did not launch", ex.Message);
+               Assert.Fail("profile login page did not launch");
                throw;
             }
 

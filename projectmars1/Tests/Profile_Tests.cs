@@ -4,23 +4,20 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using projectmars1.Utilities;
+using projectmars1.Pages1;
 
 namespace projectmars1.Pages1
 {
     [TestFixture]
-    internal class Profile_Tests:  CommonDriver
+    public class Profile_Tests: CommonDriver
     {        
-        [OneTimeSetUp]
-        public void LoginFunction()
-        {
+               
             // open chrome browser
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
+            //driver = new ChromeDriver();
+            //driver.Manage().Window.Maximize();
 
-            // Login page object initialization and definition
-            LoginPage loginPageObj = new LoginPage();
-            loginPageObj.LoginSteps(driver);
-        }
+            
+        
 
         [Test, Order (1), Description("check if language is created")]
         public void CreateProfile_Test()

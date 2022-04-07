@@ -14,16 +14,16 @@ namespace projectmars1.Pages1
     {                                         
         public void CreateProfile(IWebDriver driver)
         {
-            Thread.Sleep(6000);
-            // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[1]/div/a[2]", 40);
+           Thread.Sleep(3000);
+            
            
             // adding  new language
             
             // go to profile page 
-            IWebElement Profile = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[2]"));  
-            Profile.Click();
-           // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]", 40);
-            Thread.Sleep(2000);
+            //IWebElement Profile = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[1]/div/a[2]"));  
+           // Profile.Click();
+            Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]", 2);
+            //Thread.Sleep(2000);
             // click on  Languages to add new language on profile page  
             IWebElement selectLanguages = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]"));
             selectLanguages.Click();
@@ -31,12 +31,11 @@ namespace projectmars1.Pages1
             // now click on addnew 
             IWebElement addnewButton = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/table/thead/tr/th[3]"));
             addnewButton.Click();
-           // Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input", 32);
-            Thread.Sleep(6000);
+            Wait.WaitToBeVisible(driver, "XPath", "//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input", 2);
+            //Thread.Sleep(1000);
 
             // type to add Language to add new language 
             IWebElement addLanguage = driver.FindElement(By.XPath("//*[@id='account-profile-section']/div/section[2]/div/div/div/div[3]/form/div[2]/div/div[2]/div/div/div[1]/input"));
-            addLanguage.Click();
             addLanguage.SendKeys("English");
 
             
